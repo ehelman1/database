@@ -7,8 +7,9 @@
 
 <body>
     <h2>My Address Book</h2>
-    
-    <form>
+    <%=message%>
+    <form action = "/input" method = "post"><b>
+
         First Name: <br>
             <input type="text" name="firstname"><br>
         Last Name: <br>
@@ -23,8 +24,9 @@
             <input type="text" name="state"><br>
         Zip: <br>
             <input type="text" name="zip"><br>
-        <br><input type="submit" value="Submit">
-    </form>
+        <br><input type="submit" value="Submit" id="input">
+    </b></form>
+
 
 </body>
 
