@@ -27,8 +27,17 @@ post '/input' do
     city = params[:city]
     state = params[:state]
     zip = params[:zip]
-    db.exec("INSERT INTO test (first, last, phone, street, city, state, zip)
+   check_phone = db.exec("SELECT * FROM test WHERE phone = '#{phone}'")
+
+   if 
+       check_phone.num_tuples.zero? == false
+       erb :index, :locals => {:message =>"Thank you. You have already entered your information."}
+   
+   else 
+        input = db.exec("INSERT INTO test (first, last, phone, street, city, state, zip)
         VALUES ('#{first}','#{last}','#{phone}','#{street}','#{city}','#{state}','#{zip}')")
-    erb :index, :locals => {:message =>"Thank you for submitting your information."}
+        erb :index, :locals => {:message =>"Thank you for submitting your information."}
+   end   
+
 end
 
