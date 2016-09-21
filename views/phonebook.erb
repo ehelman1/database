@@ -1,0 +1,43 @@
+<table style="width:100%">
+  <div class="table-resposive">
+  <table class ="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th> 
+    <th>Phone</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <% check_phone.each do |check_phone| %>
+    <td>
+        <%= check_phone['first'] %>
+    </td>
+    <td>
+        <%= check_phone['last'] %>
+    </td>
+    <td>
+        <%= check_phone['phone'] %>
+    </td>
+    <td>
+        <%= check_phone['street'] %>
+    </td>
+    <td>
+        <%= check_phone['city'] %>
+    </td>
+    <td>
+        <%= check_phone['state'] %>
+    </td>
+    <td>
+        <%= check_phone['zip'] %>
+    </td>
+    
+</tbody>
+<% end %>
+</table>
+</div>

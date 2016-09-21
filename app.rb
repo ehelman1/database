@@ -41,3 +41,8 @@ post '/input' do
 
 end
 
+get '/phonebook' do
+    check_phone = db.exec("SELECT * FROM test")
+    erb :phonebook, :locals => {:check_phone => check_phone}
+end
+
